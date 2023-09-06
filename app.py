@@ -15,6 +15,7 @@ from langchain.utilities import GoogleSearchAPIWrapper
 from getpass import getpass
 
 SERPAPI_API_KEY = "Input API Key"
+os.environ["OPENAI_API_KEY"] = "your_api_key_here"
 
 st.set_page_config(page_title="Langchain Agents")
 # Define which tools the agent can use to answer user queries
