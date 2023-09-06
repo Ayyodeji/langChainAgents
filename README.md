@@ -12,6 +12,7 @@
   - [Running the Application](#running-the-application)
   - [Simulating Conversations](#simulating-conversations)
 - [Customizing Agents](#customizing-agents)
+- [Deployment](#deployment)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -111,6 +112,62 @@ ben_agent = create_agent("Ben", prefix, ben_suffix)
 ```
 
 Feel free to modify the templates and agent roles to fit your application's requirements.
+
+## Deployment
+
+The Langchain Agents application can be deployed on Amazon EC2 for production use. Below is a summary of the deployment process:
+
+1. **Create an EC2 Instance:**
+
+   - Launch an EC2 instance from the [AWS Management Console](https://aws.amazon.com/console/).
+   - Choose the appropriate instance type and configure security groups to allow incoming traffic on the desired port (e.g., port 80).
+
+2. **Clone the Repository:**
+
+   - SSH into your EC2 instance:
+
+     ```bash
+     ssh -i /path/to/your-key-pair.pem ec2-user@YOUR_EC2_PUBLIC_DNS_HERE
+     ```
+
+   - Clone the Langchain Agents repository:
+
+     ```bash
+     git clone https://github.com/your-username/langchain-agents.git
+     ```
+
+3. **Build and Run the Docker Image:**
+
+   - Build the Docker image within the project directory:
+
+     ```bash
+     cd langchain-agents
+     docker build -t my-streamlit-app .
+     ```
+
+   - Run the Docker container as a detached process, binding it to port 80:
+
+     ```bash
+     docker run -d -p 80:80 my-streamlit-app
+     ```
+
+4. **Configure Security Groups:**
+
+   - Edit the security group associated with your EC2 instance to allow incoming traffic on port 80.
+
+5. **Access the Application:**
+
+   - Open a web browser and enter the public DNS or IP address of your EC2 instance in the address bar.
+
+   - The Langchain Agents application should now be accessible at:
+
+     ```
+     http://YOUR_EC2_PUBLIC_DNS_HERE
+     ```
+
+Congratulations! Your Langchain Agents application is now deployed and accessible on Amazon EC2. Users can interact with virtual agents and simulate conversations.
+
+Feel free to customize this section further to provide any additional details or tips related to your specific deployment process.
 
 ## Contributing
 
