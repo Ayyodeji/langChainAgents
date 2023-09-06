@@ -44,7 +44,7 @@ Before you begin, ensure you have met the following requirements:
 1. Clone the Langchain Agents repository to your local machine:
 
    ```bash
-   git clone https://github.com/your-username/langchain-agents.git
+   git clone https://github.com/Ayyodeji/langChainAgents.git
    ```
 
 2. Change the directory to the project folder:
@@ -133,7 +133,7 @@ The Langchain Agents application can be deployed on Amazon EC2 for production us
    - Clone the Langchain Agents repository:
 
      ```bash
-     git clone https://github.com/your-username/langchain-agents.git
+     git clone https://github.com/Ayyodeji/langChainAgents.git
      ```
 
 3. **Build and Run the Docker Image:**
