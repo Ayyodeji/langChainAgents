@@ -1,4 +1,5 @@
 import os
+
 import streamlit as st
 from langchain.agents import Tool, AgentExecutor, LLMSingleActionAgent, AgentOutputParser
 from langchain.prompts import BaseChatPromptTemplate
@@ -13,7 +14,7 @@ from langchain import OpenAI, LLMChain
 from langchain.utilities import GoogleSearchAPIWrapper
 from getpass import getpass
 
-SERPAPI_API_KEY = 'Input Key'
+SERPAPI_API_KEY = "Input API Key"
 
 st.set_page_config(page_title="Langchain Agents")
 # Define which tools the agent can use to answer user queries
@@ -98,7 +99,7 @@ da_agent = create_agent("DA", prefix, da_suffix)
 
 def main():
     st.title("Incident Response Simulation")
-
+    st.caption('This is a prototyped environment with three langchain agents with different personalities and behaviour, Ben(CEO), Tyne(CTO), Da(Assistant), \nStart a conversation in form of an incident in an application pipeline')
     # Initialize chat history
     if "messages" not in st.session_state:
         st.session_state.messages = []
